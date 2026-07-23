@@ -1,0 +1,658 @@
+﻿[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/Chrison-dev/TvdbApi.git")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("TvdbClient.Specs")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v9.0", FrameworkDisplayName=".NET 9.0")]
+namespace Tvdb.Clients
+{
+    public class ApiException : System.Exception
+    {
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException) { }
+        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; }
+        public string Response { get; }
+        public int StatusCode { get; }
+        public override string ToString() { }
+    }
+    public class ApiException<TResult> : Tvdb.Clients.ApiException
+    {
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException) { }
+        public TResult Result { get; }
+    }
+    public class ArtworkClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IArtworkClient
+    {
+        public ArtworkClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.ArtworkBaseRecord> ArtworkAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.ArtworkExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.ArtworkClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Artwork_StatusesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IArtwork_StatusesClient
+    {
+        public Artwork_StatusesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Artwork_StatusesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ArtworkStatus>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Artwork_TypesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IArtwork_TypesClient
+    {
+        public Artwork_TypesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Artwork_TypesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ArtworkType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Award_CategoriesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IAward_CategoriesClient
+    {
+        public Award_CategoriesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.AwardCategoryBaseRecord> CategoriesAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.AwardCategoryExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Award_CategoriesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class AwardsClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IAwardsClient
+    {
+        public AwardsClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.AwardBaseRecord>> AwardsGetAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.AwardBaseRecord> AwardsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.AwardExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.AwardsClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class CharactersClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ICharactersClient
+    {
+        public CharactersClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Character> CharactersAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.CharactersClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class CompaniesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ICompaniesClient
+    {
+        public CompaniesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Company> CompaniesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Company>> CompaniesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.CompaniesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.CompanyType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Content_RatingsClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IContent_RatingsClient
+    {
+        public Content_RatingsClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ContentRating>> RatingsAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Content_RatingsClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class CountriesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ICountriesClient
+    {
+        public CountriesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Country>> CountriesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.CountriesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Entity_TypesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IEntity_TypesClient
+    {
+        public Entity_TypesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EntityType>> EntitiesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Entity_TypesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class EpisodesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IEpisodesClient
+    {
+        public EpisodesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.EpisodeBaseRecord> EpisodesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EpisodeBaseRecord>> EpisodesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.EpisodeExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetEpisodeExtendedMeta? meta = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.EpisodesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class FavoritesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IFavoritesClient
+    {
+        public FavoritesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<object> FavoritesGetAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task FavoritesPostAsync(Tvdb.Models.FavoriteRecord body = null, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.FavoritesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class GendersClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IGendersClient
+    {
+        public GendersClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Gender>> GendersAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.GendersClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class GenresClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IGenresClient
+    {
+        public GenresClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.GenreBaseRecord>> GenresGetAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.GenreBaseRecord> GenresGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.GenresClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public interface IArtworkClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.ArtworkBaseRecord> ArtworkAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.ArtworkExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IArtwork_StatusesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ArtworkStatus>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IArtwork_TypesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ArtworkType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IAward_CategoriesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.AwardCategoryBaseRecord> CategoriesAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.AwardCategoryExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IAwardsClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.AwardBaseRecord>> AwardsGetAsync(System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.AwardBaseRecord> AwardsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.AwardExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ICharactersClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.Character> CharactersAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ICompaniesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.Company> CompaniesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Company>> CompaniesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.CompanyType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IContent_RatingsClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ContentRating>> RatingsAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ICountriesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Country>> CountriesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IEntity_TypesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EntityType>> EntitiesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IEpisodesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.EpisodeBaseRecord> EpisodesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EpisodeBaseRecord>> EpisodesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.EpisodeExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetEpisodeExtendedMeta? meta = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IFavoritesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<object> FavoritesGetAsync(System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task FavoritesPostAsync(Tvdb.Models.FavoriteRecord body = null, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IGendersClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Gender>> GendersAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IGenresClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.GenreBaseRecord>> GenresGetAsync(System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.GenreBaseRecord> GenresGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IInspirationTypesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.InspirationType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ILanguagesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Language>> LanguagesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IListsClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.ListExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.ListBaseRecord> ListsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ListBaseRecord>> ListsGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.ListBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Translation>> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ILoginClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.Response> LoginAsync(Tvdb.Models.Body body, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IMovie_StatusesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Status>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IMoviesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.MovieExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetMovieExtendedMeta? meta = default, bool? short = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.MovieBaseRecord>> FilterAsync(string country, string lang, long? company = default, long? contentRating = default, Tvdb.Models.GetMoviesFilterGenre? genre = default, Tvdb.Models.GetMoviesFilterSort? sort = default, Tvdb.Models.GetMoviesFilterStatus? status = default, long? year = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.MovieBaseRecord> MoviesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.MovieBaseRecord>> MoviesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.MovieBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IPeopleClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.PeopleExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetPeopleExtendedMeta? meta = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.PeopleBaseRecord> PeopleGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.PeopleBaseRecord>> PeopleGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IPeople_TypesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.PeopleType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ISearchClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SearchByRemoteIdResult>> RemoteidAsync(string remoteId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SearchResult>> SearchAsync(string query = null, string q = null, string type = null, long? year = default, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, long? offset = default, long? limit = default, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ISeasonsClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.SeasonExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.SeasonBaseRecord> SeasonsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeasonBaseRecord>> SeasonsGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeasonType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ISeriesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<Tvdb.Models.SeriesExtendedRecord> ArtworksAsync(long id, string lang = null, int? type = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Response3> EpisodesGetAsync(int page, long id, string season_type, string lang, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Response2> EpisodesGetAsync(int page, long id, string season_type, int? season = default, int? episodeNumber = default, string airDate = null, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.SeriesExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetSeriesExtendedMeta? meta = default, bool? short = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeriesBaseRecord>> FilterAsync(string country, string lang, long? company = default, long? contentRating = default, Tvdb.Models.GetSeriesFilterGenre? genre = default, Tvdb.Models.GetSeriesFilterSort? sort = default, Tvdb.Models.GetSeriesFilterSortType? sortType = default, Tvdb.Models.GetSeriesFilterStatus? status = default, long? year = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> NextAiredAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> SeriesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeriesBaseRecord>> SeriesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ISeries_StatusesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Status>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ISource_TypesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SourceType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IUpdatesClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EntityUpdate>> UpdatesAsync(long since, Tvdb.Models.UpdatesType? type = default, Tvdb.Models.UpdatesAction? action = default, long? page = default, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface IUser_infoClient : Tvdb.Abstractions.ITvdbClient
+    {
+        System.Threading.Tasks.Task<object> UserGetAsync(System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<object> UserGetAsync(long id, System.Threading.CancellationToken cancellationToken = default);
+    }
+    public class InspirationTypesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IInspirationTypesClient
+    {
+        public InspirationTypesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.InspirationTypesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.InspirationType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class LanguagesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ILanguagesClient
+    {
+        public LanguagesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Language>> LanguagesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.LanguagesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class ListsClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IListsClient
+    {
+        public ListsClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.ListExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.ListBaseRecord> ListsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.ListBaseRecord>> ListsGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.ListsClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.ListBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Translation>> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class LoginClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ILoginClient
+    {
+        public LoginClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Response> LoginAsync(Tvdb.Models.Body body, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.LoginClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Movie_StatusesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IMovie_StatusesClient
+    {
+        public Movie_StatusesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Movie_StatusesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Status>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class MoviesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IMoviesClient
+    {
+        public MoviesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.MovieExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetMovieExtendedMeta? meta = default, bool? short = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.MovieBaseRecord>> FilterAsync(string country, string lang, long? company = default, long? contentRating = default, Tvdb.Models.GetMoviesFilterGenre? genre = default, Tvdb.Models.GetMoviesFilterSort? sort = default, Tvdb.Models.GetMoviesFilterStatus? status = default, long? year = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.MovieBaseRecord> MoviesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.MovieBaseRecord>> MoviesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.MoviesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.MovieBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class PeopleClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IPeopleClient
+    {
+        public PeopleClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.PeopleExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetPeopleExtendedMeta? meta = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.PeopleBaseRecord> PeopleGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.PeopleBaseRecord>> PeopleGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.PeopleClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class People_TypesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IPeople_TypesClient
+    {
+        public People_TypesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.People_TypesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.PeopleType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class SearchClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ISearchClient
+    {
+        public SearchClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.SearchClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SearchByRemoteIdResult>> RemoteidAsync(string remoteId, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SearchResult>> SearchAsync(string query = null, string q = null, string type = null, long? year = default, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, long? offset = default, long? limit = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class SeasonsClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ISeasonsClient
+    {
+        public SeasonsClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeasonExtendedRecord> ExtendedAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.SeasonsClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeasonBaseRecord> SeasonsGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeasonBaseRecord>> SeasonsGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeasonType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class SeriesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ISeriesClient
+    {
+        public SeriesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeriesExtendedRecord> ArtworksAsync(long id, string lang = null, int? type = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Response3> EpisodesGetAsync(int page, long id, string season_type, string lang, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Response2> EpisodesGetAsync(int page, long id, string season_type, int? season = default, int? episodeNumber = default, string airDate = null, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeriesExtendedRecord> ExtendedAsync(long id, Tvdb.Models.GetSeriesExtendedMeta? meta = default, bool? short = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeriesBaseRecord>> FilterAsync(string country, string lang, long? company = default, long? contentRating = default, Tvdb.Models.GetSeriesFilterGenre? genre = default, Tvdb.Models.GetSeriesFilterSort? sort = default, Tvdb.Models.GetSeriesFilterSortType? sortType = default, Tvdb.Models.GetSeriesFilterStatus? status = default, long? year = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> NextAiredAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.SeriesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> SeriesGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SeriesBaseRecord>> SeriesGetAsync(long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.SeriesBaseRecord> SlugAsync(string slug, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<Tvdb.Models.Translation> TranslationsAsync(long id, string language, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Series_StatusesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ISeries_StatusesClient
+    {
+        public Series_StatusesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Series_StatusesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.Status>> StatusesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class Source_TypesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.ISource_TypesClient
+    {
+        public Source_TypesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.Source_TypesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.SourceType>> TypesAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class UpdatesClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IUpdatesClient
+    {
+        public UpdatesClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.UpdatesClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Tvdb.Models.EntityUpdate>> UpdatesAsync(long since, Tvdb.Models.UpdatesType? type = default, Tvdb.Models.UpdatesAction? action = default, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+    public class User_infoClient : Tvdb.Abstractions.ITvdbClient, Tvdb.Clients.IUser_infoClient
+    {
+        public User_infoClient(System.Net.Http.HttpClient httpClient) { }
+        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get; }
+        public bool ReadResponseAsString { get; set; }
+        protected virtual System.Threading.Tasks.Task<Tvdb.Clients.User_infoClient.ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken) { }
+        public virtual System.Threading.Tasks.Task<object> UserGetAsync(System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual System.Threading.Tasks.Task<object> UserGetAsync(long id, System.Threading.CancellationToken cancellationToken = default) { }
+        protected struct ObjectResponseResult<T>
+        {
+            public ObjectResponseResult(T responseObject, string responseText) { }
+            public T Object { get; }
+            public string Text { get; }
+        }
+    }
+}
+namespace Tvdb.Constants
+{
+    public static class TvdbConstants
+    {
+        public const string HttpClientName = "Tvdb Api Client";
+    }
+}
+namespace Tvdb.Handlers
+{
+    public class TokenAuthorizationHeaderHandler : System.Net.Http.DelegatingHandler
+    {
+        public TokenAuthorizationHeaderHandler(Tvdb.Abstractions.ITokenProvider tokenProvider) { }
+        protected override System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> SendAsync(System.Net.Http.HttpRequestMessage request, System.Threading.CancellationToken cancellationToken) { }
+    }
+}
+namespace Tvdb.Paging
+{
+    public static class TvdbPagingExtensions
+    {
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.Company>> GetPageAsync(this Tvdb.Clients.ICompaniesClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.EpisodeBaseRecord>> GetPageAsync(this Tvdb.Clients.IEpisodesClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.ListBaseRecord>> GetPageAsync(this Tvdb.Clients.IListsClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.MovieBaseRecord>> GetPageAsync(this Tvdb.Clients.IMoviesClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.PeopleBaseRecord>> GetPageAsync(this Tvdb.Clients.IPeopleClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.SeasonBaseRecord>> GetPageAsync(this Tvdb.Clients.ISeasonsClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.SeriesBaseRecord>> GetPageAsync(this Tvdb.Clients.ISeriesClient client, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+        public static System.Threading.Tasks.Task<Tvdb.Abstractions.Page<Tvdb.Models.EntityUpdate>> GetPageAsync(this Tvdb.Clients.IUpdatesClient client, long since, Tvdb.Models.UpdatesType? type = default, Tvdb.Models.UpdatesAction? action = default, long? page = default, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+}
+namespace Tvdb.Provider
+{
+    public class TvdbTokenProvider : Tvdb.Abstractions.ITokenProvider
+    {
+        public TvdbTokenProvider(Microsoft.Extensions.Options.IOptions<Tvdb.Abstractions.TvdbConfiguration> options, Microsoft.Extensions.Logging.ILogger<Tvdb.Provider.TvdbTokenProvider> logger) { }
+        public Tvdb.Abstractions.TvdbConfiguration Config { get; }
+        public Microsoft.Extensions.Logging.ILogger<Tvdb.Provider.TvdbTokenProvider> Logger { get; }
+        public Microsoft.Extensions.Options.IOptions<Tvdb.Abstractions.TvdbConfiguration> Options { get; }
+        public Tvdb.Abstractions.Token Token { get; }
+        public System.Threading.Tasks.Task<Tvdb.Abstractions.Token> AcquireTokenAsync(System.Threading.CancellationToken cancellationToken = default) { }
+    }
+}

@@ -73,7 +73,7 @@ var record = response.Data;                            // { data, status } envel
 
 ## Building
 
-This project builds with **[Fallout](https://github.com/ChrisonSimtian/Fallout)**
+This project builds with **[Fallout](https://github.com/Fallout-build/Fallout)**
 (a NUKE fork) — the build lives in `build/Build.cs` and runs through the `./build.ps1`
 bootstrapper (no global tool required). CI (`build.yml`) invokes the same targets.
 

@@ -19,17 +19,14 @@ using static Fallout.Common.Tools.DotNet.DotNetTasks;
 /// CI (build.yml, auto-generated from the [GitHubActions] attribute) runs Test + Pack
 /// on pushes/PRs to main. The <c>Generate</c> target owns codegen in-stack (NSwag's
 /// C# API — no CLI, no .nswag config, no external scripts) and is deliberately NOT in
-/// CI — run it locally via <c>./build.ps1 Generate</c>. Publishing to NuGet uses
-/// trusted publishing (OIDC) via a dedicated workflow (Fallout has no built-in OIDC).
+/// CI — run it locally via <c>./build.ps1 Generate</c>.
 /// </summary>
-// AutoGenerate=false: the workflow was generated from this attribute, but its run
-// step is bootstrapped via `dotnet run --project build/_build.csproj` instead of the
-// `fallout` global tool (Fallout.GlobalTools isn't on nuget.org). The attribute stays
-// as the source-of-truth description of the build lane.
+// Workflows are GENERATED from this attribute (see CLAUDE.md: never hand-edit
+// .github/workflows/*.yml). Regenerate with `./build.cmd` or:
+//   dotnet fallout --generate-configuration GitHubActions_build --host GitHubActions
 [GitHubActions(
     "build",
     GitHubActionsImage.UbuntuLatest,
-    AutoGenerate = false,
     FetchDepth = 0,
     OnPushBranches = new[] { "main" },
     OnPullRequestBranches = new[] { "main" },
@@ -82,11 +79,14 @@ partial class Build : FalloutBuild
             Log.Information("Downloading spec: {Url}", SpecUrl);
             var document = await OpenApiYamlDocument.FromUrlAsync(SpecUrl);
 
-            var coerced = CoerceIntegerIdPathParameters(document);
-            Log.Information("Overlay: coerced {Count} id path param(s) number → int64", coerced);
+            var coerced = CoerceIntegerParameters(document);
+            Log.Information("Overlay: coerced {Count} integer param(s) number → int64", coerced);
 
             var hoisted = HoistInlineParameterEnums(document);
             Log.Information("Overlay: hoisted {Count} inline parameter enum(s) to named schemas", hoisted);
+
+            var unwrapped = StripDataEnvelope(document);
+            Log.Information("Overlay: stripped the data envelope from {Count} response(s)", unwrapped);
 
             // DTOs only → Tvdb.Models (TvdbClient.Models project). No client interfaces/exception
             // classes here — those belong with the generic client core.
@@ -142,18 +142,17 @@ partial class Build : FalloutBuild
     }
 
     /// <summary>
-    /// TheTVDB types integer resource ids as <c>number</c>, which NSwag maps to
-    /// <c>double</c>. Coerce the path-id parameters to integer/int64. Narrow by
-    /// design: the only other <c>number</c> fields are the genuinely-float
-    /// <c>score</c> properties, which must stay <c>double</c>.
+    /// TheTVDB types every integer parameter (ids, <c>page</c>, <c>year</c>, <c>since</c>, …)
+    /// as <c>number</c>, which NSwag maps to <c>double</c>. Coerce all <c>number</c>
+    /// parameters (path and query) to integer/int64 → C# <c>long</c>. Safe: the only genuine
+    /// floats in the API are the <c>score</c> response properties, which are not parameters.
     /// </summary>
-    static int CoerceIntegerIdPathParameters(OpenApiDocument document)
+    static int CoerceIntegerParameters(OpenApiDocument document)
     {
         var count = 0;
         foreach (var pathItem in document.Paths.Values)
         foreach (var operation in pathItem.Values)
-        foreach (var parameter in operation.Parameters
-                     .Where(p => p.Kind == OpenApiParameterKind.Path))
+        foreach (var parameter in operation.Parameters)
         {
             var schema = parameter.Schema;
             if (schema is { Type: JsonObjectType.Number })
@@ -196,6 +195,37 @@ partial class Build : FalloutBuild
 
             parameter.Schema = new NJsonSchema.JsonSchema { Reference = document.Components.Schemas[name] };
             count++;
+        }
+
+        return count;
+    }
+
+    /// <summary>
+    /// TheTVDB wraps every payload in a <c>{ data, status, links? }</c> envelope. Replace each
+    /// JSON response schema with its inner <c>data</c> schema so the generated clients return the
+    /// entity (<c>T</c>) or collection (<c>ICollection&lt;T&gt;</c>) directly. The envelope is
+    /// peeled off the wire at runtime by EnvelopeUnwrappingHandler; pagination <c>links</c> are
+    /// surfaced separately for the list endpoints.
+    /// </summary>
+    static int StripDataEnvelope(OpenApiDocument document)
+    {
+        var count = 0;
+        foreach (var pathItem in document.Paths.Values)
+        foreach (var operation in pathItem.Values)
+        {
+            if (operation.Responses is null)
+                continue;
+
+            foreach (var response in operation.Responses.Values)
+            {
+                if (!response.Content.TryGetValue("application/json", out var media) || media.Schema is null)
+                    continue;
+                if (media.Schema.Properties.TryGetValue("data", out var dataSchema))
+                {
+                    media.Schema = dataSchema;
+                    count++;
+                }
+            }
         }
 
         return count;

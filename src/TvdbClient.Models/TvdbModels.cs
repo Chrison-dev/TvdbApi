@@ -2813,113 +2813,78 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetMoviesFilterGenre
+    public enum GetMoviesFilterGenre : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"4")]
-        _4 = 3,
+        _4 = 4,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"5")]
-        _5 = 4,
+        _5 = 5,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"6")]
-        _6 = 5,
+        _6 = 6,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"7")]
-        _7 = 6,
+        _7 = 7,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"8")]
-        _8 = 7,
+        _8 = 8,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"9")]
-        _9 = 8,
+        _9 = 9,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"10")]
-        _10 = 9,
+        _10 = 10,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"11")]
-        _11 = 10,
+        _11 = 11,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"12")]
-        _12 = 11,
+        _12 = 12,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"13")]
-        _13 = 12,
+        _13 = 13,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"14")]
-        _14 = 13,
+        _14 = 14,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"15")]
-        _15 = 14,
+        _15 = 15,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"16")]
-        _16 = 15,
+        _16 = 16,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"17")]
-        _17 = 16,
+        _17 = 17,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"18")]
-        _18 = 17,
+        _18 = 18,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"19")]
-        _19 = 18,
+        _19 = 19,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"21")]
-        _21 = 19,
+        _21 = 21,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"22")]
-        _22 = 20,
+        _22 = 22,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"23")]
-        _23 = 21,
+        _23 = 23,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"24")]
-        _24 = 22,
+        _24 = 24,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"25")]
-        _25 = 23,
+        _25 = 25,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"26")]
-        _26 = 24,
+        _26 = 26,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"27")]
-        _27 = 25,
+        _27 = 27,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"28")]
-        _28 = 26,
+        _28 = 28,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"29")]
-        _29 = 27,
+        _29 = 29,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"30")]
-        _30 = 28,
+        _30 = 30,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"31")]
-        _31 = 29,
+        _31 = 31,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"32")]
-        _32 = 30,
+        _32 = 32,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"33")]
-        _33 = 31,
+        _33 = 33,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"34")]
-        _34 = 32,
+        _34 = 34,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"35")]
-        _35 = 33,
+        _35 = 35,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"36")]
-        _36 = 34,
+        _36 = 36,
 
     }
 
@@ -2939,17 +2904,14 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetMoviesFilterStatus
+    public enum GetMoviesFilterStatus : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
     }
 
@@ -2987,113 +2949,78 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetSeriesFilterGenre
+    public enum GetSeriesFilterGenre : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"4")]
-        _4 = 3,
+        _4 = 4,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"5")]
-        _5 = 4,
+        _5 = 5,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"6")]
-        _6 = 5,
+        _6 = 6,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"7")]
-        _7 = 6,
+        _7 = 7,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"8")]
-        _8 = 7,
+        _8 = 8,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"9")]
-        _9 = 8,
+        _9 = 9,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"10")]
-        _10 = 9,
+        _10 = 10,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"11")]
-        _11 = 10,
+        _11 = 11,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"12")]
-        _12 = 11,
+        _12 = 12,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"13")]
-        _13 = 12,
+        _13 = 13,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"14")]
-        _14 = 13,
+        _14 = 14,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"15")]
-        _15 = 14,
+        _15 = 15,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"16")]
-        _16 = 15,
+        _16 = 16,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"17")]
-        _17 = 16,
+        _17 = 17,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"18")]
-        _18 = 17,
+        _18 = 18,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"19")]
-        _19 = 18,
+        _19 = 19,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"21")]
-        _21 = 19,
+        _21 = 21,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"22")]
-        _22 = 20,
+        _22 = 22,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"23")]
-        _23 = 21,
+        _23 = 23,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"24")]
-        _24 = 22,
+        _24 = 24,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"25")]
-        _25 = 23,
+        _25 = 25,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"26")]
-        _26 = 24,
+        _26 = 26,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"27")]
-        _27 = 25,
+        _27 = 27,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"28")]
-        _28 = 26,
+        _28 = 28,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"29")]
-        _29 = 27,
+        _29 = 29,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"30")]
-        _30 = 28,
+        _30 = 30,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"31")]
-        _31 = 29,
+        _31 = 31,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"32")]
-        _32 = 30,
+        _32 = 32,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"33")]
-        _33 = 31,
+        _33 = 33,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"34")]
-        _34 = 32,
+        _34 = 34,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"35")]
-        _35 = 33,
+        _35 = 35,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"36")]
-        _36 = 34,
+        _36 = 36,
 
     }
 
@@ -3128,17 +3055,14 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetSeriesFilterStatus
+    public enum GetSeriesFilterStatus : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
     }
 
@@ -3288,1413 +3212,6 @@ namespace Tvdb.Models
     public partial class Response
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Data Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response2
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public ArtworkBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response3
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public ArtworkExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response4
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<ArtworkStatus> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response5
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<ArtworkType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response6
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<AwardBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response7
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public AwardBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response8
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public AwardExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response9
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public AwardCategoryBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response10
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public AwardCategoryExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response11
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Character Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response12
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Company> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response13
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<CompanyType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response14
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Company Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response15
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<ContentRating> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response16
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Country> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response17
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<EntityType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response18
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<EpisodeBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response19
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public EpisodeBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response20
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public EpisodeExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response21
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Translation Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response22
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Gender> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response23
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<GenreBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response24
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public GenreBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response25
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<InspirationType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response26
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Language> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response27
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<ListBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response28
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public ListBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response29
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public ListBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response30
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public ListExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response31
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Translation> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response32
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<MovieBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response33
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public MovieBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response34
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public MovieExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response35
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<MovieBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response36
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public MovieBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response37
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Translation Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response38
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Status> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response39
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<PeopleBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response40
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public PeopleBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response41
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public PeopleExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response42
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Translation Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response43
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<PeopleType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response44
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SearchResult> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response45
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SearchByRemoteIdResult> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response46
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SeasonBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response47
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeasonBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response48
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeasonExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response49
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SeasonType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response50
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Translation Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response51
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SeriesBaseRecord> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response52
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeriesBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response53
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeriesExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response54
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeriesBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response55
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeriesExtendedRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response56
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Data2 Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response57
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Data3 Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response58
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SeriesBaseRecord> Data { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response59
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public SeriesBaseRecord Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response60
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Translation Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response61
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<Status> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response62
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<SourceType> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response63
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public System.Collections.Generic.ICollection<EntityUpdate> Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("links")]
-        public Links Links { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response64
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public object Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response65
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public object Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Response66
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public object Data { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Data
-    {
-
         [System.Text.Json.Serialization.JsonPropertyName("token")]
         public string Token { get; set; }
 
@@ -4710,7 +3227,7 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Data2
+    public partial class Response2
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("series")]
@@ -4731,7 +3248,7 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Data3
+    public partial class Response3
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("series")]
