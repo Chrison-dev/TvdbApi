@@ -3,7 +3,7 @@
 [![NuGet](https://img.shields.io/nuget/v/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
 [![Downloads](https://img.shields.io/nuget/dt/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
 [![Build & Test](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml/badge.svg)](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml)
-[![Built with Fallout](https://img.shields.io/badge/built%20with-Fallout-8A2BE2)](https://github.com/ChrisonSimtian/Fallout)
+[![Built with Fallout](https://img.shields.io/badge/built%20with-Fallout-8A2BE2)](https://github.com/Fallout-build/Fallout)
 [![License](https://img.shields.io/github/license/Chrison-dev/TvdbApi.svg)](LICENSE)
 
 A C# `HttpClient`-based API client for [TheTVDB](https://thetvdb.com) **v4 API**.
