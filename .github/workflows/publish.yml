@@ -1,0 +1,50 @@
+# Publish to NuGet.org via Trusted Publishing (OIDC) — no stored API key.
+#
+# Requires a one-time Trusted Publisher policy on nuget.org for each package
+# (TvdbClient, TvdbClient.Models, TvdbClient.Abstractions): owner Chrison-dev,
+# repo TvdbApi, workflow publish.yml, environment nuget.org. Set the repo variable
+# NUGET_USER to your nuget.org username.
+#
+# Triggered by pushing a version tag, e.g. `git tag v4.7.11 && git push origin v4.7.11`.
+name: publish
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # required for OIDC trusted publishing
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: nuget.org
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                 # GitVersion needs full history
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: 'Restore: dotnet tools'
+        run: dotnet tool restore
+
+      - name: 'Pack'
+        run: dotnet run --project build/_build.csproj -- Pack
+
+      - name: 'NuGet: trusted-publishing login (OIDC → short-lived key)'
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: 'NuGet: push'
+        run: >
+          dotnet nuget push "artifacts/packages/*.nupkg"
+          --source https://api.nuget.org/v3/index.json
+          --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+          --skip-duplicate

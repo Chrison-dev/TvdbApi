@@ -24,7 +24,9 @@
     "ExecutableTarget": {
       "type": "string",
       "enum": [
-        "Generate"
+        "Generate",
+        "Pack",
+        "Test"
       ]
     },
     "Verbosity": {

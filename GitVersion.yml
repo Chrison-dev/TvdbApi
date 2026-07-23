@@ -1,9 +1,9 @@
 mode: ContinuousDelivery
 
 # Versioning scheme: Major.Minor track the TheTVDB API version (currently 4.7);
-# the PATCH is our internal release counter. Bump `next-version` for each release
-# (e.g. 4.7.12) or when the API's major/minor changes (e.g. 4.8.0).
-next-version: 4.7.11
+# the PATCH is our internal release counter. Releases are cut by tagging
+# `v<Major>.<Minor>.<patch>` (e.g. `git tag v4.7.11`) — GitVersion reads the tag
+# (tag-prefix 'v'). Untagged builds get a prerelease suffix.
 
 branches:
   main:
