@@ -1,0 +1,78 @@
+﻿[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/Chrison-dev/TvdbApi.git")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v9.0", FrameworkDisplayName=".NET 9.0")]
+namespace Tvdb.Abstractions
+{
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    public abstract class AbstractBaseRecord
+    {
+        protected AbstractBaseRecord() { }
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; }
+    }
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    public class ApiResponseWrapper<TDataType>
+        where TDataType :  class
+    {
+        public ApiResponseWrapper() { }
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("data")]
+        public TDataType Data { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? ErrorMessage { get; set; }
+        [System.Text.Json.Serialization.JsonIgnore]
+        public bool IsSuccess { get; }
+        [System.Text.Json.Serialization.JsonPropertyName("links")]
+        public Tvdb.Models.Links Links { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("status")]
+        public string Status { get; set; }
+    }
+    public interface ITokenProvider
+    {
+        Tvdb.Abstractions.Token Token { get; }
+        System.Threading.Tasks.Task<Tvdb.Abstractions.Token> AcquireTokenAsync(System.Threading.CancellationToken cancellationToken = default);
+    }
+    public interface ITvdbClient { }
+    public class LoginRequestBody : Tvdb.Abstractions.AbstractBaseRecord
+    {
+        public LoginRequestBody() { }
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings=true)]
+        [System.Text.Json.Serialization.JsonPropertyName("apikey")]
+        public string Apikey { get; set; }
+        [System.Text.Json.Serialization.JsonIgnore(Condition=System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+        [System.Text.Json.Serialization.JsonPropertyName("pin")]
+        public string? Pin { get; set; }
+    }
+    public sealed class Page<T>
+    {
+        public Page(System.Collections.Generic.IReadOnlyList<T> items, Tvdb.Models.Links? links, string? status) { }
+        public bool HasNext { get; }
+        public bool HasPrevious { get; }
+        public System.Collections.Generic.IReadOnlyList<T> Items { get; }
+        public Tvdb.Models.Links? Links { get; }
+        public int? PageSize { get; }
+        public string? Status { get; }
+        public int? TotalItems { get; }
+    }
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    public class Token
+    {
+        public Token() { }
+        [System.Text.Json.Serialization.JsonPropertyName("token")]
+        public string AccessToken { get; set; }
+        public System.DateTime CreationTimestamp { get; }
+        [System.Text.Json.Serialization.JsonIgnore]
+        public bool IsTokenExpired { get; }
+        [System.Text.Json.Serialization.JsonIgnore]
+        public System.DateTime TokenExpiryDate { get; }
+        public static string TokenType { get; }
+    }
+    public class TvdbConfiguration
+    {
+        public TvdbConfiguration() { }
+        public virtual string ApiKey { get; set; }
+        public virtual string BaseUrl { get; set; }
+        public virtual string? Pin { get; set; }
+        public string TokenUrl { get; }
+    }
+}

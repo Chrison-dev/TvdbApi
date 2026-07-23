@@ -6,8 +6,9 @@ C# client for **TheTVDB v4 API**, published as three NuGet packages. Read this b
 
 This repo builds with **[Fallout](https://github.com/Fallout-build/Fallout)** (a NUKE fork). **All GitHub Actions workflows are GENERATED** from `[GitHubActions(...)]` attributes on `build/Build.cs`.
 
-- **Do not edit `.github/workflows/*.yml` by hand.** They are generated artifacts.
-- To change CI/publishing: edit the `[GitHubActions]` attribute(s) + build targets in `build/Build.cs` (use `IConfigureGitHubActions` / custom steps for things Fallout doesn't model natively, e.g. OIDC publish, GitHub Release), then **regenerate**:
+- **Do not edit generated `.github/workflows/*.yml` by hand.** `build.yml` is generated from the `[GitHubActions]` attribute on `build/Build.cs`.
+- **One documented exception: `publish.yml` is hand-written.** The publish lane's OIDC login + GitHub Release are `uses:` actions that only Fallout's 11.x `IConfigureGitHubActions` custom-step API can model — and the **published** `Fallout.GlobalTool` (10.3.49) doesn't have it. So `publish.yml` is maintained by hand (exactly as Fallout's *own* repo keeps a hand-written publish workflow). If a Fallout 11.x tool is ever published, move publishing into `[GitHubActions("publish")]` + `IConfigureGitHubActions` and regenerate.
+- To change the build/CI lane: edit the `[GitHubActions]` attribute + targets in `build/Build.cs`, then **regenerate**:
   ```sh
   ./build.ps1                 # regenerates workflows as part of a build
   # or explicitly:
