@@ -2,7 +2,8 @@
 
 [![NuGet](https://img.shields.io/nuget/v/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
 [![Downloads](https://img.shields.io/nuget/dt/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
-[![Build](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml/badge.svg)](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml)
+[![Build & Test](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml/badge.svg)](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml)
+[![Built with Fallout](https://img.shields.io/badge/built%20with-Fallout-8A2BE2)](https://github.com/ChrisonSimtian/Fallout)
 [![License](https://img.shields.io/github/license/Chrison-dev/TvdbApi.svg)](LICENSE)
 
 A C# `HttpClient`-based API client for [TheTVDB](https://thetvdb.com) **v4 API**.
@@ -70,10 +71,22 @@ var response = await series.SeriesGetAsync(121361);   // ids are long
 var record = response.Data;                            // { data, status } envelope
 ```
 
+## Building
+
+This project builds with **[Fallout](https://github.com/ChrisonSimtian/Fallout)**
+(a NUKE fork) — the build lives in `build/Build.cs` and runs through the `./build.ps1`
+bootstrapper (no global tool required). CI (`build.yml`) invokes the same targets.
+
+```sh
+./build.ps1 Test       # run the *.Specs test suite
+./build.ps1 Pack       # produce the three NuGet packages in artifacts/packages
+./build.ps1 Generate   # regenerate the client + models from TheTVDB's OpenAPI spec
+```
+
 ## Regenerating the models
 
-Models + clients are generated from TheTVDB's OpenAPI spec via the
-[Fallout](https://github.com/ChrisonSimtian/Fallout) build (NSwag under the hood):
+Models + clients are generated from TheTVDB's OpenAPI spec via the Fallout
+`Generate` target (NSwag under the hood):
 
 ```sh
 ./build.ps1 Generate
