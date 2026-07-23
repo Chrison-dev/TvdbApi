@@ -22,14 +22,12 @@ using static Fallout.Common.Tools.DotNet.DotNetTasks;
 /// CI — run it locally via <c>./build.ps1 Generate</c>. Publishing to NuGet uses
 /// trusted publishing (OIDC) via a dedicated workflow (Fallout has no built-in OIDC).
 /// </summary>
-// AutoGenerate=false: the workflow was generated from this attribute, but its run
-// step is bootstrapped via `dotnet run --project build/_build.csproj` instead of the
-// `fallout` global tool (Fallout.GlobalTools isn't on nuget.org). The attribute stays
-// as the source-of-truth description of the build lane.
+// CI build lane — the workflow is GENERATED from this attribute (see CLAUDE.md:
+// never hand-edit .github/workflows/*.yml). Regenerate with:
+//   dotnet fallout --generate-configuration GitHubActions_build --host GitHubActions
 [GitHubActions(
     "build",
     GitHubActionsImage.UbuntuLatest,
-    AutoGenerate = false,
     FetchDepth = 0,
     OnPushBranches = new[] { "main" },
     OnPullRequestBranches = new[] { "main" },

@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fallout.Common" Version="11.0.18" />
-    <PackageReference Include="Fallout.Components" Version="11.0.18" />
+    <PackageReference Include="Fallout.Common" Version="10.3.49" />
+    <PackageReference Include="Fallout.Components" Version="10.3.49" />
     <!-- Codegen uses NSwag's C# API directly (no CLI, no .nswag config). -->
     <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="14.2.0" />
     <PackageReference Include="NSwag.Core.Yaml" Version="14.2.0" />

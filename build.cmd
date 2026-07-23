@@ -1,4 +1,6 @@
+:; set -eo pipefail
+:; SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)
+:; exec "$SCRIPT_DIR/build.sh" "$@"
+
 @echo off
-:: Fallout build bootstrapper (Windows). Runs the build project directly.
-::   build.cmd Generate
-dotnet run --project "%~dp0build\_build.csproj" -- %*
+powershell -ExecutionPolicy ByPass -NoProfile -File "%~dp0build.ps1" %*
