@@ -19,11 +19,10 @@ using static Fallout.Common.Tools.DotNet.DotNetTasks;
 /// CI (build.yml, auto-generated from the [GitHubActions] attribute) runs Test + Pack
 /// on pushes/PRs to main. The <c>Generate</c> target owns codegen in-stack (NSwag's
 /// C# API — no CLI, no .nswag config, no external scripts) and is deliberately NOT in
-/// CI — run it locally via <c>./build.ps1 Generate</c>. Publishing to NuGet uses
-/// trusted publishing (OIDC) via a dedicated workflow (Fallout has no built-in OIDC).
+/// CI — run it locally via <c>./build.ps1 Generate</c>.
 /// </summary>
-// CI build lane — the workflow is GENERATED from this attribute (see CLAUDE.md:
-// never hand-edit .github/workflows/*.yml). Regenerate with:
+// Workflows are GENERATED from this attribute (see CLAUDE.md: never hand-edit
+// .github/workflows/*.yml). Regenerate with `./build.cmd` or:
 //   dotnet fallout --generate-configuration GitHubActions_build --host GitHubActions
 [GitHubActions(
     "build",
