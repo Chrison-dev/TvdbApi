@@ -1,4 +1,4 @@
-﻿using Tvdb.Provider;
+using Tvdb.Abstractions;
 
 namespace Tvdb.Handlers;
 
@@ -21,7 +21,7 @@ public class TokenAuthorizationHeaderHandler(ITokenProvider tokenProvider) : Del
         var token = await tokenProvider.AcquireTokenAsync(cancellationToken);
 
         // Add the Authorization Header to the request
-        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(Models.Token.TokenType, token.AccessToken);
+        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(Token.TokenType, token.AccessToken);
         return await base.SendAsync(request, cancellationToken);
     }
     #endregion

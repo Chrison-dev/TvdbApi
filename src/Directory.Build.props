@@ -3,13 +3,17 @@
     <PropertyGroup Label="Package Information">
         <Authors>Chrison Simtian</Authors>
         <Copyright>$(CurrentYear) - $(Authors)</Copyright>
-        <PackageProjectUrl>https://github.com/ChrisonSimtian/TvdbApi</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/ChrisonSimtian/TvdbApi.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Chrison-dev/TvdbApi</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Chrison-dev/TvdbApi.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+    <ItemGroup Label="Versioning">
+        <!-- All packable projects share one GitVersion-computed version. -->
+        <PackageReference Include="GitVersion.MsBuild" Version="6.2.0" PrivateAssets="All" />
+    </ItemGroup>
     <ItemGroup Label="Pack Markdown Files">
         <None Include="$(MSBuildThisFileDirectory)\..\LICENSE" Pack="true" PackagePath="" />
         <None Include="$(MSBuildThisFileDirectory)\..\README.md" Pack="true" PackagePath="" />

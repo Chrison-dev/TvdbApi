@@ -1,0 +1,5 @@
+<!-- Stops the build project from inheriting the repo-root Directory.Build.props
+     (package metadata, net9 TFM, version props). The build project is tooling,
+     not a shipped package. -->
+<Project>
+</Project>

@@ -1,23 +1,27 @@
 <Project>
     <Import Project="$(MSBuildThisFileDirectory)\..\Directory.Build.props" />
-    <PropertyGroup Label="Test Project Properties">
-        <IsTestingPlatformApplication>true</IsTestingPlatformApplication>
+
+    <!-- Test stack for *.Specs projects: xUnit + FluentAssertions + Verify +
+         NetArchTest + Mockly (HTTP mocking). Versions are per-package on purpose
+         (no Central Package Management). Mirrors the Fallout convention of
+         injecting the test stack, so each spec csproj stays tiny. -->
+    <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('Specs'))">
         <IsTestProject>true</IsTestProject>
-        <OutputType>Exe</OutputType>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
-    <ItemGroup Label="Nuget Packages">
-        <PackageReference Include="TUnit" Version="0.25.21" />
-        <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="17.14.2" />
-        <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="1.7.3" />
-        <PackageReference Include="Shouldly" Version="4.2.1" />
+
+    <ItemGroup Condition="$(MSBuildProjectName.EndsWith('Specs'))">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+        <PackageReference Include="xunit" Version="2.9.3" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+        <PackageReference Include="FluentAssertions" Version="8.10.0" />
+        <PackageReference Include="Verify.Xunit" Version="31.7.1" />
+        <PackageReference Include="NetArchTest.Rules" Version="1.3.2" />
+        <PackageReference Include="Mockly" Version="1.4.1" />
+        <PackageReference Include="FluentAssertions.Mockly.v8" Version="1.4.0" />
         <PackageReference Include="coverlet.collector" Version="6.0.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="FluentAssertions" Version="6.2.0" />
-        <PackageReference Include="Moq" Version="4.20.72" />
-    </ItemGroup>
-    <ItemGroup>
-        <Using Include="Shouldly" />
     </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- Dev machines may only have the net8/net10 runtimes; roll the net9 test
+         host forward. CI installs net9 via global.json so this is a no-op there. -->
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TvdbClient\TvdbClient.csproj" />
+    <ProjectReference Include="..\..\src\TvdbClient.Abstractions\TvdbClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\TvdbClient.Models\TvdbClient.Models.csproj" />
+  </ItemGroup>
+
+</Project>

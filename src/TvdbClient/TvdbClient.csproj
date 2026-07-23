@@ -7,12 +7,13 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="Scrutor.Extensions.HttpClient" Version="5.1.2-alpha.2" />
-		<PackageReference Include="GitVersion.MsBuild" Version="6.2.0" PrivateAssets="All" />
+		<PackageReference Include="Scrutor.Extensions.HttpClient" Version="5.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\TvdbClient.Models\TvdbClient.Models.csproj" />
+	  <ProjectReference Include="..\TvdbClient.Abstractions\TvdbClient.Abstractions.csproj" />
 	</ItemGroup>
 	<PropertyGroup Label="Package">
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>TVDB Api Client</Title>
 		<Description>C# Api Client (HttpClient) for TVDB Api</Description>
 		<IncludeSymbols>False</IncludeSymbols>
