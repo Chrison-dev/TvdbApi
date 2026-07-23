@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "documentGenerator": {
     "fromDocument": {
-      "url": "https://thetvdb.github.io/v4-api/swagger.yml",
+      "url": "openapi/tvdb-v4.patched.yml",
       "output": null,
       "newLineBehavior": "Auto"
     }

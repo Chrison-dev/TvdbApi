@@ -6,7 +6,15 @@
       "version": "6.3.0",
       "commands": [
         "dotnet-gitversion"
-      ]
+      ],
+      "rollForward": false
+    },
+    "nswag.consolecore": {
+      "version": "14.2.0",
+      "commands": [
+        "nswag"
+      ],
+      "rollForward": true
     }
   }
 }
