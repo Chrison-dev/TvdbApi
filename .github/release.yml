@@ -1,0 +1,19 @@
+# Categorises the auto-generated GitHub Release notes by PR label
+# (used by `generate_release_notes` in publish.yml).
+changelog:
+  exclude:
+    labels:
+      - duplicate
+      - invalid
+      - wontfix
+  categories:
+    - title: ✨ Features & Enhancements
+      labels: [enhancement, feature]
+    - title: 🐛 Fixes
+      labels: [bug, fix]
+    - title: 📝 Documentation
+      labels: [documentation]
+    - title: 🔧 Maintenance & CI
+      labels: [chore, ci, cleanup, dependencies, iac]
+    - title: Other Changes
+      labels: ["*"]

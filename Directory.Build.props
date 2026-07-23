@@ -14,10 +14,10 @@
     <!-- Enable GitVersion integration for local builds -->
     <EnableGitVersionTask Condition="'$(GITHUB_ACTIONS)' != 'true'">true</EnableGitVersionTask>
     <!-- Use static fallback version when GitVersion is not available -->
-    <Version Condition="'$(GitVersion_FullSemVer)' == ''">4.7.11</Version>
-    <AssemblyVersion Condition="'$(GitVersion_AssemblySemVer)' == ''">4.7.11.0</AssemblyVersion>
-    <FileVersion Condition="'$(GitVersion_AssemblySemVer)' == ''">4.7.11.0</FileVersion>
-    <InformationalVersion Condition="'$(GitVersion_InformationalVersion)' == ''">4.7.11</InformationalVersion>
+    <Version Condition="'$(GitVersion_FullSemVer)' == ''">4.7.12</Version>
+    <AssemblyVersion Condition="'$(GitVersion_AssemblySemVer)' == ''">4.7.12.0</AssemblyVersion>
+    <FileVersion Condition="'$(GitVersion_AssemblySemVer)' == ''">4.7.12.0</FileVersion>
+    <InformationalVersion Condition="'$(GitVersion_InformationalVersion)' == ''">4.7.12</InformationalVersion>
     <!-- Use GitVersion values when available -->
     <Version Condition="'$(GitVersion_FullSemVer)' != ''">$(GitVersion_FullSemVer)</Version>
     <AssemblyVersion Condition="'$(GitVersion_AssemblySemVer)' != ''">$(GitVersion_AssemblySemVer)</AssemblyVersion>
