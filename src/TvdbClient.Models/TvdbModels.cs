@@ -2813,113 +2813,78 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetMoviesFilterGenre
+    public enum GetMoviesFilterGenre : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"4")]
-        _4 = 3,
+        _4 = 4,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"5")]
-        _5 = 4,
+        _5 = 5,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"6")]
-        _6 = 5,
+        _6 = 6,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"7")]
-        _7 = 6,
+        _7 = 7,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"8")]
-        _8 = 7,
+        _8 = 8,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"9")]
-        _9 = 8,
+        _9 = 9,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"10")]
-        _10 = 9,
+        _10 = 10,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"11")]
-        _11 = 10,
+        _11 = 11,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"12")]
-        _12 = 11,
+        _12 = 12,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"13")]
-        _13 = 12,
+        _13 = 13,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"14")]
-        _14 = 13,
+        _14 = 14,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"15")]
-        _15 = 14,
+        _15 = 15,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"16")]
-        _16 = 15,
+        _16 = 16,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"17")]
-        _17 = 16,
+        _17 = 17,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"18")]
-        _18 = 17,
+        _18 = 18,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"19")]
-        _19 = 18,
+        _19 = 19,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"21")]
-        _21 = 19,
+        _21 = 21,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"22")]
-        _22 = 20,
+        _22 = 22,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"23")]
-        _23 = 21,
+        _23 = 23,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"24")]
-        _24 = 22,
+        _24 = 24,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"25")]
-        _25 = 23,
+        _25 = 25,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"26")]
-        _26 = 24,
+        _26 = 26,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"27")]
-        _27 = 25,
+        _27 = 27,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"28")]
-        _28 = 26,
+        _28 = 28,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"29")]
-        _29 = 27,
+        _29 = 29,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"30")]
-        _30 = 28,
+        _30 = 30,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"31")]
-        _31 = 29,
+        _31 = 31,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"32")]
-        _32 = 30,
+        _32 = 32,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"33")]
-        _33 = 31,
+        _33 = 33,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"34")]
-        _34 = 32,
+        _34 = 34,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"35")]
-        _35 = 33,
+        _35 = 35,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"36")]
-        _36 = 34,
+        _36 = 36,
 
     }
 
@@ -2939,17 +2904,14 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetMoviesFilterStatus
+    public enum GetMoviesFilterStatus : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
     }
 
@@ -2987,113 +2949,78 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetSeriesFilterGenre
+    public enum GetSeriesFilterGenre : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"4")]
-        _4 = 3,
+        _4 = 4,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"5")]
-        _5 = 4,
+        _5 = 5,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"6")]
-        _6 = 5,
+        _6 = 6,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"7")]
-        _7 = 6,
+        _7 = 7,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"8")]
-        _8 = 7,
+        _8 = 8,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"9")]
-        _9 = 8,
+        _9 = 9,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"10")]
-        _10 = 9,
+        _10 = 10,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"11")]
-        _11 = 10,
+        _11 = 11,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"12")]
-        _12 = 11,
+        _12 = 12,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"13")]
-        _13 = 12,
+        _13 = 13,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"14")]
-        _14 = 13,
+        _14 = 14,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"15")]
-        _15 = 14,
+        _15 = 15,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"16")]
-        _16 = 15,
+        _16 = 16,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"17")]
-        _17 = 16,
+        _17 = 17,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"18")]
-        _18 = 17,
+        _18 = 18,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"19")]
-        _19 = 18,
+        _19 = 19,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"21")]
-        _21 = 19,
+        _21 = 21,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"22")]
-        _22 = 20,
+        _22 = 22,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"23")]
-        _23 = 21,
+        _23 = 23,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"24")]
-        _24 = 22,
+        _24 = 24,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"25")]
-        _25 = 23,
+        _25 = 25,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"26")]
-        _26 = 24,
+        _26 = 26,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"27")]
-        _27 = 25,
+        _27 = 27,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"28")]
-        _28 = 26,
+        _28 = 28,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"29")]
-        _29 = 27,
+        _29 = 29,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"30")]
-        _30 = 28,
+        _30 = 30,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"31")]
-        _31 = 29,
+        _31 = 31,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"32")]
-        _32 = 30,
+        _32 = 32,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"33")]
-        _33 = 31,
+        _33 = 33,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"34")]
-        _34 = 32,
+        _34 = 34,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"35")]
-        _35 = 33,
+        _35 = 35,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"36")]
-        _36 = 34,
+        _36 = 36,
 
     }
 
@@ -3128,17 +3055,14 @@ namespace Tvdb.Models
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetSeriesFilterStatus
+    public enum GetSeriesFilterStatus : long
     {
 
-        [System.Runtime.Serialization.EnumMember(Value = @"1")]
-        _1 = 0,
+        _1 = 1,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"2")]
-        _2 = 1,
+        _2 = 2,
 
-        [System.Runtime.Serialization.EnumMember(Value = @"3")]
-        _3 = 2,
+        _3 = 3,
 
     }
 

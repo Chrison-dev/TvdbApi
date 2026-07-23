@@ -1,6 +1,8 @@
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using Tvdb.Models;
+using Tvdb.Paging;
 
 namespace Tvdb.Handlers;
 
@@ -32,6 +34,15 @@ internal sealed class EnvelopeUnwrappingHandler : DelegatingHandler
             !document.RootElement.TryGetProperty("data", out var data))
         {
             return response;
+        }
+
+        // If a paging wrapper is capturing, surface the pagination metadata it needs.
+        if (TvdbResponseContext.Current is { } capture)
+        {
+            if (document.RootElement.TryGetProperty("links", out var links) && links.ValueKind == JsonValueKind.Object)
+                capture.Links = links.Deserialize<Links>();
+            if (document.RootElement.TryGetProperty("status", out var status) && status.ValueKind == JsonValueKind.String)
+                capture.Status = status.GetString();
         }
 
         var original = response.Content;

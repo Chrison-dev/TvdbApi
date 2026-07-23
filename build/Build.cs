@@ -82,8 +82,8 @@ partial class Build : FalloutBuild
             Log.Information("Downloading spec: {Url}", SpecUrl);
             var document = await OpenApiYamlDocument.FromUrlAsync(SpecUrl);
 
-            var coerced = CoerceIntegerIdPathParameters(document);
-            Log.Information("Overlay: coerced {Count} id path param(s) number → int64", coerced);
+            var coerced = CoerceIntegerParameters(document);
+            Log.Information("Overlay: coerced {Count} integer param(s) number → int64", coerced);
 
             var hoisted = HoistInlineParameterEnums(document);
             Log.Information("Overlay: hoisted {Count} inline parameter enum(s) to named schemas", hoisted);
@@ -145,18 +145,17 @@ partial class Build : FalloutBuild
     }
 
     /// <summary>
-    /// TheTVDB types integer resource ids as <c>number</c>, which NSwag maps to
-    /// <c>double</c>. Coerce the path-id parameters to integer/int64. Narrow by
-    /// design: the only other <c>number</c> fields are the genuinely-float
-    /// <c>score</c> properties, which must stay <c>double</c>.
+    /// TheTVDB types every integer parameter (ids, <c>page</c>, <c>year</c>, <c>since</c>, …)
+    /// as <c>number</c>, which NSwag maps to <c>double</c>. Coerce all <c>number</c>
+    /// parameters (path and query) to integer/int64 → C# <c>long</c>. Safe: the only genuine
+    /// floats in the API are the <c>score</c> response properties, which are not parameters.
     /// </summary>
-    static int CoerceIntegerIdPathParameters(OpenApiDocument document)
+    static int CoerceIntegerParameters(OpenApiDocument document)
     {
         var count = 0;
         foreach (var pathItem in document.Paths.Values)
         foreach (var operation in pathItem.Values)
-        foreach (var parameter in operation.Parameters
-                     .Where(p => p.Kind == OpenApiParameterKind.Path))
+        foreach (var parameter in operation.Parameters)
         {
             var schema = parameter.Schema;
             if (schema is { Type: JsonObjectType.Number })

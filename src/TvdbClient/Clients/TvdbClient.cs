@@ -2169,7 +2169,7 @@ namespace Tvdb.Clients
         /// <param name="page">name</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Company>> CompaniesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Company>> CompaniesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -2229,7 +2229,7 @@ namespace Tvdb.Clients
         /// <param name="page">name</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Company>> CompaniesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Company>> CompaniesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3305,7 +3305,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EpisodeBaseRecord>> EpisodesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EpisodeBaseRecord>> EpisodesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -3377,7 +3377,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EpisodeBaseRecord>> EpisodesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EpisodeBaseRecord>> EpisodesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4922,7 +4922,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ListBaseRecord>> ListsGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ListBaseRecord>> ListsGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -5002,7 +5002,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ListBaseRecord>> ListsGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ListBaseRecord>> ListsGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5597,7 +5597,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> MoviesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> MoviesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -5633,7 +5633,7 @@ namespace Tvdb.Clients
         /// <param name="year">release year</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> FilterAsync(string country, string lang, double? company = null, double? contentRating = null, double? genre = null, GetMoviesFilterSort? sort = null, double? status = null, double? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> FilterAsync(string country, string lang, long? company = null, long? contentRating = null, GetMoviesFilterGenre? genre = null, GetMoviesFilterSort? sort = null, GetMoviesFilterStatus? status = null, long? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -5695,7 +5695,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> MoviesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> MoviesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5996,7 +5996,7 @@ namespace Tvdb.Clients
         /// <param name="year">release year</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> FilterAsync(string country, string lang, double? company = null, double? contentRating = null, double? genre = null, GetMoviesFilterSort? sort = null, double? status = null, double? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<MovieBaseRecord>> FilterAsync(string country, string lang, long? company = null, long? contentRating = null, GetMoviesFilterGenre? genre = null, GetMoviesFilterSort? sort = null, GetMoviesFilterStatus? status = null, long? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             if (country == null)
                 throw new System.ArgumentNullException("country");
@@ -6665,7 +6665,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleBaseRecord>> PeopleGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleBaseRecord>> PeopleGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -6737,7 +6737,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleBaseRecord>> PeopleGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PeopleBaseRecord>> PeopleGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -7483,7 +7483,7 @@ namespace Tvdb.Clients
         /// <param name="limit">Limit results.</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SearchResult>> SearchAsync(string query = null, string q = null, string type = null, double? year = null, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, double? offset = null, double? limit = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SearchResult>> SearchAsync(string query = null, string q = null, string type = null, long? year = null, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, long? offset = null, long? limit = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -7547,7 +7547,7 @@ namespace Tvdb.Clients
         /// <param name="limit">Limit results.</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SearchResult>> SearchAsync(string query = null, string q = null, string type = null, double? year = null, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, double? offset = null, double? limit = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SearchResult>> SearchAsync(string query = null, string q = null, string type = null, long? year = null, string company = null, string country = null, string director = null, string language = null, string primaryType = null, string network = null, string remote_id = null, long? offset = null, long? limit = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -7886,7 +7886,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeasonBaseRecord>> SeasonsGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeasonBaseRecord>> SeasonsGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -7965,7 +7965,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeasonBaseRecord>> SeasonsGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeasonBaseRecord>> SeasonsGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -8543,7 +8543,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> SeriesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> SeriesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -8621,7 +8621,7 @@ namespace Tvdb.Clients
         /// <param name="year">release year</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> FilterAsync(string country, string lang, double? company = null, double? contentRating = null, double? genre = null, GetSeriesFilterSort? sort = null, GetSeriesFilterSortType? sortType = null, double? status = null, double? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> FilterAsync(string country, string lang, long? company = null, long? contentRating = null, GetSeriesFilterGenre? genre = null, GetSeriesFilterSort? sort = null, GetSeriesFilterSortType? sortType = null, GetSeriesFilterStatus? status = null, long? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <remarks>
@@ -8683,7 +8683,7 @@ namespace Tvdb.Clients
         /// <param name="page">page number</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> SeriesGetAsync(double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> SeriesGetAsync(long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -9429,7 +9429,7 @@ namespace Tvdb.Clients
         /// <param name="year">release year</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> FilterAsync(string country, string lang, double? company = null, double? contentRating = null, double? genre = null, GetSeriesFilterSort? sort = null, GetSeriesFilterSortType? sortType = null, double? status = null, double? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<SeriesBaseRecord>> FilterAsync(string country, string lang, long? company = null, long? contentRating = null, GetSeriesFilterGenre? genre = null, GetSeriesFilterSort? sort = null, GetSeriesFilterSortType? sortType = null, GetSeriesFilterStatus? status = null, long? year = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             if (country == null)
                 throw new System.ArgumentNullException("country");
@@ -10337,7 +10337,7 @@ namespace Tvdb.Clients
         /// <param name="page">name</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EntityUpdate>> UpdatesAsync(double since, UpdatesType? type = null, UpdatesAction? action = null, double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EntityUpdate>> UpdatesAsync(long since, UpdatesType? type = null, UpdatesAction? action = null, long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
     }
 
@@ -10380,7 +10380,7 @@ namespace Tvdb.Clients
         /// <param name="page">name</param>
         /// <returns>response</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EntityUpdate>> UpdatesAsync(double since, UpdatesType? type = null, UpdatesAction? action = null, double? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<EntityUpdate>> UpdatesAsync(long since, UpdatesType? type = null, UpdatesAction? action = null, long? page = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             if (since == null)
                 throw new System.ArgumentNullException("since");
