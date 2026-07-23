@@ -11,6 +11,9 @@
 		<PackageReference Include="Scrutor.Extensions.HttpClient" Version="5.1.2-alpha.2" />
 		<PackageReference Include="GitVersion.MsBuild" Version="6.2.0" PrivateAssets="All" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\TvdbClient.Models\TvdbClient.Models.csproj" />
+	</ItemGroup>
 	<PropertyGroup Label="Package">
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>TVDB Api Client</Title>

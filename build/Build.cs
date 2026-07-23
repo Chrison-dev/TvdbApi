@@ -26,7 +26,14 @@ partial class Build : FalloutBuild
 
     const string SpecUrl = "https://thetvdb.github.io/v4-api/swagger.yml";
 
-    AbsolutePath ClientProjectDirectory => RootDirectory / "src" / "TvdbClient";
+    const string ModelsNamespace = "Tvdb.Models";
+    const string ClientsNamespace = "Tvdb.Clients";
+
+    // The generated DTOs live in the API-versioned TvdbClient.Models project;
+    // the generated clients live in the generic TvdbClient core project and
+    // import the models namespace. (Architecture enforced by NamespaceSeparationSpecs.)
+    AbsolutePath ContractsOutput => RootDirectory / "src" / "TvdbClient.Models" / "TvdbModels.cs";
+    AbsolutePath ClientsOutput => RootDirectory / "src" / "TvdbClient" / "Clients" / "TvdbClient.cs";
 
     Target Generate => _ => _
         .Description("Regenerate the TheTVDB v4 client from the live OpenAPI spec")
@@ -38,45 +45,61 @@ partial class Build : FalloutBuild
             var coerced = CoerceIntegerIdPathParameters(document);
             Log.Information("Overlay: coerced {Count} id path param(s) number → int64", coerced);
 
-            var settings = new CSharpClientGeneratorSettings
-            {
-                ClassName = "{controller}Client",
-                ClientBaseInterface = "ITvdbClient",
-                InjectHttpClient = true,
-                DisposeHttpClient = true,
-                GenerateClientInterfaces = true,
-                GenerateExceptionClasses = true,
-                ExceptionClass = "ApiException",
-                WrapDtoExceptions = true,
-                UseBaseUrl = false,
-                GenerateBaseUrlProperty = true,
-                GenerateSyncMethods = false,
-                GenerateOptionalParameters = true,
-                OperationNameGenerator = new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
-            };
-            settings.CSharpGeneratorSettings.Namespace = "Tvdb.Models";
-            settings.CSharpGeneratorSettings.JsonLibrary = CSharpJsonLibrary.SystemTextJson;
-            settings.CSharpGeneratorSettings.ClassStyle = CSharpClassStyle.Poco;
-            settings.CSharpGeneratorSettings.GenerateDataAnnotations = true;
-            settings.CSharpGeneratorSettings.GenerateOptionalPropertiesAsNullable = true;
-            settings.CSharpGeneratorSettings.RequiredPropertiesMustBeDefined = true;
-            settings.CSharpGeneratorSettings.DateType = "System.DateTimeOffset";
-            settings.CSharpGeneratorSettings.DateTimeType = "System.DateTimeOffset";
-            settings.CSharpGeneratorSettings.TimeType = "System.TimeSpan";
-            settings.CSharpGeneratorSettings.TimeSpanType = "System.TimeSpan";
+            var hoisted = HoistInlineParameterEnums(document);
+            Log.Information("Overlay: hoisted {Count} inline parameter enum(s) to named schemas", hoisted);
 
-            var generator = new CSharpClientGenerator(document, settings);
+            // DTOs only → Tvdb.Models (TvdbClient.Models project). No client interfaces/exception
+            // classes here — those belong with the generic client core.
+            var contracts = new CSharpClientGenerator(document,
+                    CreateSettings(ModelsNamespace, dtoTypes: true, clientInterfaces: false, exceptionClasses: false))
+                .GenerateFile(ClientGeneratorOutputType.Contracts);
 
-            var clients = generator.GenerateFile(ClientGeneratorOutputType.Implementation);
-            var contracts = generator.GenerateFile(ClientGeneratorOutputType.Contracts);
+            // Clients only → Tvdb.Clients (TvdbClient project), importing the DTOs from Tvdb.Models.
+            var clients = new CSharpClientGenerator(document,
+                    CreateSettings(ClientsNamespace, dtoTypes: false, clientInterfaces: true, exceptionClasses: true,
+                        additionalNamespaceUsages: new[] { ModelsNamespace }))
+                .GenerateFile(ClientGeneratorOutputType.Full);
 
-            var clientsPath = ClientProjectDirectory / "Clients" / "TvdbClient.cs";
-            var contractsPath = ClientProjectDirectory / "Models" / "TvdbModels.cs";
-            clientsPath.WriteAllText(clients);
-            contractsPath.WriteAllText(contracts);
+            ContractsOutput.WriteAllText(contracts);
+            ClientsOutput.WriteAllText(clients);
 
-            Log.Information("Wrote {Clients} and {Contracts}", clientsPath, contractsPath);
+            Log.Information("Wrote {Contracts} and {Clients}", ContractsOutput, ClientsOutput);
         });
+
+    static CSharpClientGeneratorSettings CreateSettings(
+        string @namespace, bool dtoTypes, bool clientInterfaces, bool exceptionClasses,
+        string[]? additionalNamespaceUsages = null)
+    {
+        var settings = new CSharpClientGeneratorSettings
+        {
+            ClassName = "{controller}Client",
+            ClientBaseInterface = "ITvdbClient",
+            InjectHttpClient = true,
+            DisposeHttpClient = true,
+            GenerateClientInterfaces = clientInterfaces,
+            GenerateDtoTypes = dtoTypes,
+            GenerateExceptionClasses = exceptionClasses,
+            ExceptionClass = "ApiException",
+            WrapDtoExceptions = true,
+            UseBaseUrl = false,
+            GenerateBaseUrlProperty = true,
+            GenerateSyncMethods = false,
+            GenerateOptionalParameters = true,
+            OperationNameGenerator = new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
+            AdditionalNamespaceUsages = additionalNamespaceUsages ?? System.Array.Empty<string>(),
+        };
+        settings.CSharpGeneratorSettings.Namespace = @namespace;
+        settings.CSharpGeneratorSettings.JsonLibrary = CSharpJsonLibrary.SystemTextJson;
+        settings.CSharpGeneratorSettings.ClassStyle = CSharpClassStyle.Poco;
+        settings.CSharpGeneratorSettings.GenerateDataAnnotations = true;
+        settings.CSharpGeneratorSettings.GenerateOptionalPropertiesAsNullable = true;
+        settings.CSharpGeneratorSettings.RequiredPropertiesMustBeDefined = true;
+        settings.CSharpGeneratorSettings.DateType = "System.DateTimeOffset";
+        settings.CSharpGeneratorSettings.DateTimeType = "System.DateTimeOffset";
+        settings.CSharpGeneratorSettings.TimeType = "System.TimeSpan";
+        settings.CSharpGeneratorSettings.TimeSpanType = "System.TimeSpan";
+        return settings;
+    }
 
     /// <summary>
     /// TheTVDB types integer resource ids as <c>number</c>, which NSwag maps to
@@ -102,5 +125,46 @@ partial class Build : FalloutBuild
         }
 
         return count;
+    }
+
+    /// <summary>
+    /// TheTVDB defines several query-parameter enums inline (e.g. the <c>/updates</c>
+    /// <c>type</c>/<c>action</c> params), which NSwag names after the raw parameter —
+    /// yielding model types like <c>Type</c> and <c>Action</c> that collide with
+    /// <c>System.Type</c>/<c>System.Action</c>. Hoist each inline enum into a named
+    /// component schema (<c>{OperationId}{ParamName}</c>) so it generates as a clean,
+    /// non-colliding type.
+    /// </summary>
+    static int HoistInlineParameterEnums(OpenApiDocument document)
+    {
+        var count = 0;
+        foreach (var (path, pathItem) in document.Paths)
+        foreach (var (method, operation) in pathItem)
+        foreach (var parameter in operation.Parameters)
+        {
+            var schema = parameter.Schema;
+            if (schema is null || schema.HasReference || !schema.IsEnumeration)
+                continue;
+
+            var opName = string.IsNullOrEmpty(operation.OperationId)
+                ? Pascalize(method) + Pascalize(path)
+                : Pascalize(operation.OperationId);
+            var name = opName + Pascalize(parameter.Name);
+
+            if (!document.Components.Schemas.ContainsKey(name))
+                document.Components.Schemas[name] = schema;
+
+            parameter.Schema = new NJsonSchema.JsonSchema { Reference = document.Components.Schemas[name] };
+            count++;
+        }
+
+        return count;
+    }
+
+    /// <summary>PascalCase an identifier, splitting on non-alphanumeric separators.</summary>
+    static string Pascalize(string value)
+    {
+        var parts = value.Split(new[] { '-', '_', '/', '.', '{', '}', ' ' }, System.StringSplitOptions.RemoveEmptyEntries);
+        return string.Concat(parts.Select(p => char.ToUpperInvariant(p[0]) + p.Substring(1)));
     }
 }
