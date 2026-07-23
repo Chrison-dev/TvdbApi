@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- GENERIC project: hand-written contracts, config and the response envelope.
+       Version-independent of the TheTVDB API (unlike TvdbClient.Models). May depend
+       on the generated models (leaf) but never on the TvdbClient core. -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <PackageId>TvdbClient.Abstractions</PackageId>
+    <Title>TVDB Api Client — Abstractions</Title>
+    <Description>Generic contracts, configuration and response envelope for the TheTVDB v4 client.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TvdbClient.Models\TvdbClient.Models.csproj" />
+  </ItemGroup>
+
+</Project>

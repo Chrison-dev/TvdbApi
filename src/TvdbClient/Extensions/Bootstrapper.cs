@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tvdb.Configuration;
-using Tvdb.Handlers;
+using Tvdb.Abstractions;
 using Tvdb.Provider;
+using Tvdb.Handlers;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -49,7 +49,7 @@ public static class Bootstrapper
         /* Inject all Tvdb Clients at once */
         builder.Scan(scan => scan
         .FromCallingAssembly()
-        .AddClasses(classes => classes.AssignableTo<Tvdb.Clients.ITvdbClient>())
+        .AddClasses(classes => classes.AssignableTo<Tvdb.Abstractions.ITvdbClient>())
         .AsMatchingInterface()
         .AsHttpClient(Tvdb.Constants.TvdbConstants.HttpClientName)
         );

@@ -1,4 +1,4 @@
-namespace Tvdb.Clients;
+namespace Tvdb.Abstractions;
 
 /// <summary>
 /// Marker interface implemented by every generated TheTVDB client, used by the

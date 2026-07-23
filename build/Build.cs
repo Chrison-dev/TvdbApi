@@ -28,6 +28,7 @@ partial class Build : FalloutBuild
 
     const string ModelsNamespace = "Tvdb.Models";
     const string ClientsNamespace = "Tvdb.Clients";
+    const string AbstractionsNamespace = "Tvdb.Abstractions";
 
     // The generated DTOs live in the API-versioned TvdbClient.Models project;
     // the generated clients live in the generic TvdbClient core project and
@@ -57,7 +58,7 @@ partial class Build : FalloutBuild
             // Clients only → Tvdb.Clients (TvdbClient project), importing the DTOs from Tvdb.Models.
             var clients = new CSharpClientGenerator(document,
                     CreateSettings(ClientsNamespace, dtoTypes: false, clientInterfaces: true, exceptionClasses: true,
-                        additionalNamespaceUsages: new[] { ModelsNamespace }))
+                        additionalNamespaceUsages: new[] { ModelsNamespace, AbstractionsNamespace }))
                 .GenerateFile(ClientGeneratorOutputType.Full);
 
             ContractsOutput.WriteAllText(contracts);

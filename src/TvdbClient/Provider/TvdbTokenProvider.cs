@@ -1,10 +1,9 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Tvdb.Configuration;
+using Tvdb.Abstractions;
 using Tvdb.Handlers;
-using Tvdb.Models;
 
 namespace Tvdb.Provider;
 
