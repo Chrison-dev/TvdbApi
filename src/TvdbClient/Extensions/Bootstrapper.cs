@@ -37,6 +37,7 @@ public static class Bootstrapper
         builder.Configure<TvdbConfiguration>(config.GetRequiredSection("TvdbConfiguration"));
         builder.TryAddSingleton<ITokenProvider, TvdbTokenProvider>();
         builder.TryAddTransient<TokenAuthorizationHeaderHandler>();
+        builder.TryAddTransient<EnvelopeUnwrappingHandler>();
 
         string baseUrl = config.GetValue<string>("TvdbConfiguration:BaseUrl") ?? "https://api4.thetvdb.com/v4";
         builder
@@ -44,6 +45,9 @@ public static class Bootstrapper
             {
                 client.BaseAddress = new Uri(baseUrl.EnsureTrailingSlash());
             })
+            // Outermost: peel the { data, status, links } envelope off the response so the
+            // generated clients (which expect the inner data shape) deserialize cleanly.
+            .AddHttpMessageHandler<EnvelopeUnwrappingHandler>()
             .AddHttpMessageHandler<TokenAuthorizationHeaderHandler>();
 
         /* Inject all Tvdb Clients at once.

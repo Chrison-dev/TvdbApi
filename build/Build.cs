@@ -88,6 +88,9 @@ partial class Build : FalloutBuild
             var hoisted = HoistInlineParameterEnums(document);
             Log.Information("Overlay: hoisted {Count} inline parameter enum(s) to named schemas", hoisted);
 
+            var unwrapped = StripDataEnvelope(document);
+            Log.Information("Overlay: stripped the data envelope from {Count} response(s)", unwrapped);
+
             // DTOs only → Tvdb.Models (TvdbClient.Models project). No client interfaces/exception
             // classes here — those belong with the generic client core.
             var contracts = new CSharpClientGenerator(document,
@@ -196,6 +199,37 @@ partial class Build : FalloutBuild
 
             parameter.Schema = new NJsonSchema.JsonSchema { Reference = document.Components.Schemas[name] };
             count++;
+        }
+
+        return count;
+    }
+
+    /// <summary>
+    /// TheTVDB wraps every payload in a <c>{ data, status, links? }</c> envelope. Replace each
+    /// JSON response schema with its inner <c>data</c> schema so the generated clients return the
+    /// entity (<c>T</c>) or collection (<c>ICollection&lt;T&gt;</c>) directly. The envelope is
+    /// peeled off the wire at runtime by EnvelopeUnwrappingHandler; pagination <c>links</c> are
+    /// surfaced separately for the list endpoints.
+    /// </summary>
+    static int StripDataEnvelope(OpenApiDocument document)
+    {
+        var count = 0;
+        foreach (var pathItem in document.Paths.Values)
+        foreach (var operation in pathItem.Values)
+        {
+            if (operation.Responses is null)
+                continue;
+
+            foreach (var response in operation.Responses.Values)
+            {
+                if (!response.Content.TryGetValue("application/json", out var media) || media.Schema is null)
+                    continue;
+                if (media.Schema.Properties.TryGetValue("data", out var dataSchema))
+                {
+                    media.Schema = dataSchema;
+                    count++;
+                }
+            }
         }
 
         return count;
