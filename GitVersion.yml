@@ -1,5 +1,10 @@
 mode: ContinuousDelivery
 
+# Versioning scheme: Major.Minor track the TheTVDB API version (currently 4.7);
+# the PATCH is our internal release counter. Bump `next-version` for each release
+# (e.g. 4.7.12) or when the API's major/minor changes (e.g. 4.8.0).
+next-version: 4.7.11
+
 branches:
   main:
     mode: ContinuousDelivery

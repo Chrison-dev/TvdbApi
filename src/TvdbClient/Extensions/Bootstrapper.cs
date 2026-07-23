@@ -46,9 +46,11 @@ public static class Bootstrapper
             })
             .AddHttpMessageHandler<TokenAuthorizationHeaderHandler>();
 
-        /* Inject all Tvdb Clients at once */
+        /* Inject all Tvdb Clients at once.
+           Scan THIS (core) assembly — where the generated clients live — not the
+           calling assembly, which would be the consumer's when used as a package. */
         builder.Scan(scan => scan
-        .FromCallingAssembly()
+        .FromAssemblyOf<TokenAuthorizationHeaderHandler>()
         .AddClasses(classes => classes.AssignableTo<Tvdb.Abstractions.ITvdbClient>())
         .AsMatchingInterface()
         .AsHttpClient(Tvdb.Constants.TvdbConstants.HttpClientName)

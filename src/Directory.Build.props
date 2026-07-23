@@ -3,8 +3,8 @@
     <PropertyGroup Label="Package Information">
         <Authors>Chrison Simtian</Authors>
         <Copyright>$(CurrentYear) - $(Authors)</Copyright>
-        <PackageProjectUrl>https://github.com/ChrisonSimtian/TvdbApi</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/ChrisonSimtian/TvdbApi.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Chrison-dev/TvdbApi</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Chrison-dev/TvdbApi.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>

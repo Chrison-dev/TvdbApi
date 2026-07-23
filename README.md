@@ -1,62 +1,92 @@
-# TvdbApi
+# TvdbClient
 
-C# Api Client for the TVDB project
+[![NuGet](https://img.shields.io/nuget/v/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
+[![Downloads](https://img.shields.io/nuget/dt/TvdbClient.svg)](https://www.nuget.org/packages/TvdbClient/)
+[![Build](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml/badge.svg)](https://github.com/Chrison-dev/TvdbApi/actions/workflows/build.yml)
+[![License](https://img.shields.io/github/license/Chrison-dev/TvdbApi.svg)](LICENSE)
 
-## TVDB Project
+A C# `HttpClient`-based API client for [TheTVDB](https://thetvdb.com) **v4 API**.
 
-- [TVDB API](https://thetvdb.com)
-- [TVDB API Github](https://github.com/thetvdb/v4-api)
-- [TVDB API Documentation](https://thetvdb.github.io/v4-api)
+- [TheTVDB API](https://thetvdb.com) · [v4-api GitHub](https://github.com/thetvdb/v4-api) · [API docs](https://thetvdb.github.io/v4-api)
+
+> This is a thin client **AS IS** — it does not implement the caching/proxying that
+> TheTVDB recommends. Add your own caching layer if you call the API at volume.
+
+## Packages
+
+The client is split into three packages so the API-versioned models can be
+regenerated independently of the generic client code:
+
+| Package | What | Versioning |
+|---|---|---|
+| **`TvdbClient`** | Client core: generated clients, auth, DI wiring. | Generic SemVer |
+| **`TvdbClient.Models`** | The generated DTOs (`Tvdb.Models`). | Tracks the TheTVDB API version (`Major.Minor`) |
+| **`TvdbClient.Abstractions`** | Generic contracts, configuration, response envelope. | Generic SemVer |
+
+Installing `TvdbClient` pulls in the other two.
+
+```sh
+dotnet add package TvdbClient
+```
 
 ## Usage
 
-The TVDB Team recommends to maintain your own copy of their database or use a caching proxy to reduce the amount of calls being made against their API.
-It is entirely up to you as the developer to implement this. This lbirary provides a simple API client AS IS, without any of the recommended caching mechanism.
-
 ### Configuration
 
-The Client library relies on config records being present in either your appsettings.json or in a standalone TvdbClientConfig.json:
+Provide your TheTVDB API key (and optional subscriber PIN) via configuration —
+either `appsettings.json` or a standalone `TvdbClientConfig.json`:
 
 ```json
 {
   "TvdbConfiguration": {
     "BaseUrl": "https://api4.thetvdb.com/v4",
-    /* This API Key comes from the TVDB Example and obviously needs to be replaced in production */
-    "ApiKey": "580c9239-d2f8-4460-a22e-6831900a97a3",
-    "Pin": "IPQZOCMN"
+    "ApiKey": "<your-api-key>",
+    "Pin": "<optional-subscriber-pin>"
   }
 }
 ```
 
-Make sure to replace the API Key in the example with your own API Key in [TVDBs API Key Dashboard](https://www.thetvdb.com/dashboard/account/apikey).
+Get an API key from [TheTVDB's API Key dashboard](https://www.thetvdb.com/dashboard/account/apikey).
 
-### DI Registration
-
-Register TVDB Client with your DI of choice:
+### DI registration
 
 ```csharp
-        var config = builder.Configuration.AddTvdbClient().Build();
-        builder.Services.AddTvdbClient(config);
+using Microsoft.Extensions.DependencyInjection;
+
+builder.Configuration.AddTvdbClient();
+builder.Services.AddTvdbClient(builder.Configuration);
 ```
 
-### Using the Clients
+### Using the clients
+
+Resolve the per-resource client you need. Login/token acquisition and the
+`Authorization` header are handled automatically by the registered handler.
 
 ```csharp
-        var client = serviceProvider.GetRequiredService<ITvdbClient>();
-        var series = await client.GetSeriesAsync(121361);
-        Console.WriteLine(series.Data.SeriesName);
+using Tvdb.Clients;
+
+var series = serviceProvider.GetRequiredService<ISeriesClient>();
+var response = await series.SeriesGetAsync(121361);   // ids are long
+var record = response.Data;                            // { data, status } envelope
 ```
+
+## Regenerating the models
+
+Models + clients are generated from TheTVDB's OpenAPI spec via the
+[Fallout](https://github.com/ChrisonSimtian/Fallout) build (NSwag under the hood):
+
+```sh
+./build.ps1 Generate
+```
+
+This downloads the live v4 spec, applies a small overlay (integer-id coercion,
+inline-enum hoisting), and regenerates `TvdbClient.Models` + the clients.
 
 ## Versioning
 
-I try my best to align the version of this library to the latest TVDB version on their Github repository to make it easy to see which version this client is compatible with.
+`Major.Minor` track the TheTVDB API version; the patch is this library's own
+release counter. Managed with [GitVersion](https://gitversion.net) (`dotnet-gitversion`).
 
-### Git Version
+## License
 
-This project uses [GitVersion](https://gitversion.net/docs/usage) for automatic semantic versioning.
-
-To view version information for a project, just run this command:
-
-``` bash
-dotnet-gitversion
-```
+[MIT](LICENSE)
